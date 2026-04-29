@@ -8,7 +8,7 @@
   <name>roman-number</name>
   <url>http://maven.apache.org</url>
 
-  <!-- Specifica la versione di Java (es. Java 11) per evitare errori di compilazione -->
+  <!-- Specifico la versione di Java  -->
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
@@ -19,7 +19,7 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <!-- Versione aggiornata a JUnit 4 come richiesto dal PDF -->
+      <!-- Specifico la versione di JUnit  -->
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
