@@ -8,7 +8,7 @@
   <name>roman-number</name>
   <url>http://maven.apache.org</url>
 
-  <!-- Specifico la versione di Java  -->
+  <!-- Java 11 e codifica -->
   <properties>
     <maven.compiler.source>11</maven.compiler.source>
     <maven.compiler.target>11</maven.compiler.target>
@@ -16,10 +16,10 @@
   </properties>
 
   <dependencies>
+    <!-- JUnit 4 -->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <!-- Specifico la versione di JUnit  -->
       <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
@@ -27,6 +27,7 @@
 
   <build>
       <plugins>
+        <!-- Analisi Statica (Checkstyle) -->
         <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-checkstyle-plugin</artifactId>
@@ -46,6 +47,44 @@
                 </execution>
             </executions>
         </plugin>
+
+        <!-- Code Coverage (JaCoCo) -->
+        <plugin>
+            <groupId>org.jacoco</groupId>
+            <artifactId>jacoco-maven-plugin</artifactId>
+            <version>0.8.11</version>
+            <executions>
+                <execution>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <!-- Genera il report XML -->
+                    <id>report</id>
+                    <phase>test</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions>
+        </plugin>
+
+        <!-- Invio Report a Coveralls.io -->
+        <plugin>
+            <groupId>org.eluder.coveralls</groupId>
+            <artifactId>coveralls-maven-plugin</artifactId>
+            <version>4.3.0</version>
+            <dependencies>
+                <!-- Risolve problemi di compatibilità del plugin con Java 11 -->
+                <dependency>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                    <version>2.3.1</version>
+                </dependency>
+            </dependencies>
+        </plugin>
+
       </plugins>
   </build>
 </project>
