@@ -18,13 +18,15 @@
         <property name="header" value="^////////////////////////////////////////////////////////////////////$\n^// DIEGO CAZZOLA 123456$\n^// FABIO COSTA BANO 2137983$\n^////////////////////////////////////////////////////////////////////$"/>
     </module>
 
+    <!-- N.B. Fuori da TreeWalker -->
+    <module name="LineLength"> 
+        <property name="max" value="120"/>
+    </module>
+
     <module name="TreeWalker">
         <module name="BooleanExpressionComplexity"/> 
         <module name="CyclomaticComplexity"/> 
         <module name="MethodLength"/> 
-        <module name="LineLength"> 
-            <property name="max" value="120"/>
-        </module>
         <module name="AvoidStarImport"/> 
         <module name="IllegalImport"/> 
         <module name="EmptyCatchBlock"/> 
