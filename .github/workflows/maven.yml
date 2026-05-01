@@ -32,3 +32,7 @@ jobs:
     # Analisi statica
     - name: 3 - Analisi statica del codice (Checkstyle)
       run: mvn -B package -DskipTests --file pom.xml
+
+    # Coveralls
+    - name: 4 - Report Coveralls
+      run: mvn -B jacoco:report coveralls:report -DrepoToken=${{ secrets.COVERALLS_TOKEN }} --file pom.xml
