@@ -8,7 +8,18 @@ public class IntegerToRoman {
 
     public static String convert(int number) {
         String result = "";
+        
+        // Gestione del simbolo 10
+        while (number >= 10) {
+            result += "X";
+            number -= 10;
+        }
 
+        while (number >= 9) {
+            result += "IX";
+            number -= 9;
+        }
+        
         // Gestione del simbolo 5 e successivi
         while (number >= 5) {
             result += "V";
