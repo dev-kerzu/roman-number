@@ -65,7 +65,8 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
-        @Test
+
+    @Test
     public void testConvertNumberSeven() {
         int number = 7;
         String expected = "VII";
@@ -96,23 +97,78 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
+
     @Test
     public void convertElevenReturnsXI() {
-        assertEquals("XI", IntegerToRoman.convert(11));
+        int number = 11;
+        String expected = "XI";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertFourteenReturnsXIV() {
-        assertEquals("XIV", IntegerToRoman.convert(14));
+        int number = 14;
+        String expected = "XIV";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertNineteenReturnsXIX() {
-        assertEquals("XIX", IntegerToRoman.convert(19));
+        int number = 19;
+        String expected = "XIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertTwentyReturnsXX() {
-    assertEquals("XX", IntegerToRoman.convert(20));
-}
+        int number = 20;
+        String expected = "XX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertThirtyReturnsXXX() {
+        int number = 30;
+        String expected = "XXX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFortyReturnsXL() {
+        int number = 40;
+        String expected = "XL";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFortyNineReturnsXLIX() {
+        int number = 49;
+        String expected = "XLIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFiftyReturnsL() {
+        int number = 50;
+        String expected = "L";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void convertZeroShouldThrowException() {
+        IntegerToRoman.convert(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void convertOverThousandShouldThrowException() {
+        IntegerToRoman.convert(1001);
+    }
 }
