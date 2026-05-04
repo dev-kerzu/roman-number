@@ -10,20 +10,24 @@ public class IntegerToRoman {
         if (number < 1 || number > 1000) {
             throw new IllegalArgumentException("Numero non valido: " + number);
         }
+        return convertHighSymbols(number);
+    }
 
+    private static String convertHighSymbols(int number) {
         String result = "";
-        
+
         // Gestione del simbolo 100
         while (number >= 100) {
             result += "C";
             number -= 100;
         }
-        
+
         // Gestione del simbolo 90
         while (number >= 90) {
             result += "XC";
             number -= 90;
         }
+
         // Gestione del simbolo 50
         while (number >= 50) {
             result += "L";
@@ -35,6 +39,12 @@ public class IntegerToRoman {
             result += "XL";
             number -= 40;
         }
+
+        return result + convertLowSymbols(number);
+    }
+
+    private static String convertLowSymbols(int number) {
+        String result = "";
 
         // Gestione del simbolo 10
         while (number >= 10) {
@@ -67,6 +77,5 @@ public class IntegerToRoman {
         }
 
         return result;
-        
     }
-}    
+}
