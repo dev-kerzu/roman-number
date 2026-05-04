@@ -161,6 +161,37 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
+    @Test
+    public void convertSixtyReturnsLX() {
+        int number = 60;
+        String expected = "LX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertNinetyReturnsXC() {
+        int number = 90;
+        String expected = "XC";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertNinetyNineReturnsXCIX() {
+        int number = 99;
+        String expected = "XCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertOneHundredReturnsC() {
+        int number = 100;
+        String expected = "C";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void convertZeroShouldThrowException() {
