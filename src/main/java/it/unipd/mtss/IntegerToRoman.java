@@ -23,7 +23,7 @@ public class IntegerToRoman {
         while (number >= 90) {
             result += "XC";
             number -= 90;
-
+        }
         // Gestione del simbolo 50
         while (number >= 50) {
             result += "L";
@@ -67,6 +67,6 @@ public class IntegerToRoman {
         }
 
         return result;
-        }
+        
     }
 }    
