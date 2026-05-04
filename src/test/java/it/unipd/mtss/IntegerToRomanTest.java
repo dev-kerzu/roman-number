@@ -161,6 +161,7 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
+
     @Test
     public void convertSixtyReturnsLX() {
         int number = 60;
@@ -168,7 +169,7 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertNinetyReturnsXC() {
         int number = 90;
@@ -176,7 +177,7 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertNinetyNineReturnsXCIX() {
         int number = 99;
@@ -184,11 +185,43 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
-    
+
     @Test
     public void convertOneHundredReturnsC() {
         int number = 100;
         String expected = "C";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredOneReturnsCI() {
+        int number = 101;
+        String expected = "CI";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredFiftyReturnsCL() {
+        int number = 150;
+        String expected = "CL";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredNinetyNineReturnsCXCIX() {
+        int number = 199;
+        String expected = "CXCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertTwoHundredReturnsCC() {
+        int number = 200;
+        String expected = "CC";
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
