@@ -96,4 +96,23 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
+    @Test
+    public void convertElevenReturnsXI() {
+        assertEquals("XI", IntegerToRoman.convert(11));
+    }
+    
+    @Test
+    public void convertFourteenReturnsXIV() {
+        assertEquals("XIV", IntegerToRoman.convert(14));
+    }
+    
+    @Test
+    public void convertNineteenReturnsXIX() {
+        assertEquals("XIX", IntegerToRoman.convert(19));
+    }
+    
+    @Test
+    public void convertTwentyReturnsXX() {
+    assertEquals("XX", IntegerToRoman.convert(20));
+}
 }
