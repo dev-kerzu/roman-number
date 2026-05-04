@@ -12,6 +12,17 @@ public class IntegerToRoman {
         }
 
         String result = "";
+        
+        // Gestione del simbolo 100
+        while (number >= 100) {
+            result += "C";
+            number -= 100;
+        }
+        
+        // Gestione del simbolo 90
+        while (number >= 90) {
+            result += "XC";
+            number -= 90;
 
         // Gestione del simbolo 50
         while (number >= 50) {
