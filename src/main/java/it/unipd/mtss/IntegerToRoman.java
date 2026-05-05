@@ -16,6 +16,17 @@ public class IntegerToRoman {
     private static String convertHighSymbols(int number) {
         String result = "";
 
+        // Gestione del simbolo 1000
+        while (number >= 1000) {
+            result += "M";
+            number -= 1000;
+        }
+
+        // Gestione del simbolo 900
+        while (number >= 900) {
+            result += "CM";
+            number -= 900;
+        }
         // Gestione del simbolo 500
         while (number >= 500) {
             result += "D";
