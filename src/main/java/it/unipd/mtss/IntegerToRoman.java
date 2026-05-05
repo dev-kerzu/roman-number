@@ -7,25 +7,86 @@ package it.unipd.mtss;
 public class IntegerToRoman {
 
     public static String convert(int number) {
+        if (number < 1 || number > 1000) {
+            throw new IllegalArgumentException("Numero non valido: " + number);
+        }
+        return convertHighSymbols(number);
+    }
+
+    private static String convertHighSymbols(int number) {
         String result = "";
-        
+
+        // Gestione del simbolo 1000
+        while (number >= 1000) {
+            result += "M";
+            number -= 1000;
+        }
+
+        // Gestione del simbolo 900
+        while (number >= 900) {
+            result += "CM";
+            number -= 900;
+        }
+        // Gestione del simbolo 500
+        while (number >= 500) {
+            result += "D";
+            number -= 500;
+        }
+
+        // Gestione del simbolo 400
+        while (number >= 400) {
+            result += "CD";
+            number -= 400;
+        }
+        // Gestione del simbolo 100
+        while (number >= 100) {
+            result += "C";
+            number -= 100;
+        }
+
+        // Gestione del simbolo 90
+        while (number >= 90) {
+            result += "XC";
+            number -= 90;
+        }
+
+        // Gestione del simbolo 50
+        while (number >= 50) {
+            result += "L";
+            number -= 50;
+        }
+
+        // Gestione del simbolo 40
+        while (number >= 40) {
+            result += "XL";
+            number -= 40;
+        }
+
+        return result + convertLowSymbols(number);
+    }
+
+    private static String convertLowSymbols(int number) {
+        String result = "";
+
         // Gestione del simbolo 10
         while (number >= 10) {
             result += "X";
             number -= 10;
         }
 
+        // Gestione del simbolo 9
         while (number >= 9) {
             result += "IX";
             number -= 9;
         }
-        
-        // Gestione del simbolo 5 e successivi
+
+        // Gestione del simbolo 5
         while (number >= 5) {
             result += "V";
             number -= 5;
         }
 
+        // Gestione del simbolo 4
         while (number >= 4) {
             result += "IV";
             number -= 4;

@@ -65,7 +65,8 @@ public class IntegerToRomanTest {
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
     }
-        @Test
+
+    @Test
     public void testConvertNumberSeven() {
         int number = 7;
         String expected = "VII";
@@ -95,5 +96,206 @@ public class IntegerToRomanTest {
         String expected = "X";
         String actual = IntegerToRoman.convert(number);
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertElevenReturnsXI() {
+        int number = 11;
+        String expected = "XI";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFourteenReturnsXIV() {
+        int number = 14;
+        String expected = "XIV";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertNineteenReturnsXIX() {
+        int number = 19;
+        String expected = "XIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertTwentyReturnsXX() {
+        int number = 20;
+        String expected = "XX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertThirtyReturnsXXX() {
+        int number = 30;
+        String expected = "XXX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFortyReturnsXL() {
+        int number = 40;
+        String expected = "XL";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFortyNineReturnsXLIX() {
+        int number = 49;
+        String expected = "XLIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertFiftyReturnsL() {
+        int number = 50;
+        String expected = "L";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertSixtyReturnsLX() {
+        int number = 60;
+        String expected = "LX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertNinetyReturnsXC() {
+        int number = 90;
+        String expected = "XC";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertNinetyNineReturnsXCIX() {
+        int number = 99;
+        String expected = "XCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredReturnsC() {
+        int number = 100;
+        String expected = "C";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredOneReturnsCI() {
+        int number = 101;
+        String expected = "CI";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredFiftyReturnsCL() {
+        int number = 150;
+        String expected = "CL";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertOneHundredNinetyNineReturnsCXCIX() {
+        int number = 199;
+        String expected = "CXCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertTwoHundredReturnsCC() {
+        int number = 200;
+        String expected = "CC";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+
+    @Test
+    public void convertThreeHundredReturnsCCC() {
+        int number = 300;
+        String expected = "CCC";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertFourHundreturnsCD() {
+        int number = 400;
+        String expected = "CD";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertFourHundredNinetyNineReturnsCDXCIX() {
+        int number = 499;
+        String expected = "CDXCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertFiveHundredReturnsD() {
+        int number = 500;
+        String expected = "D";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    @Test
+    public void convertSixHundredReturnsDC() {
+        int number = 600;
+        String expected = "DC";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertNineHundredReturnsCM() {
+        int number = 900;
+        String expected = "CM";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertNineHundredNinetyNineReturnsCMXCIX() {
+        int number = 999;
+        String expected = "CMXCIX";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test
+    public void convertOneThousandReturnsM() {
+        int number = 1000;
+        String expected = "M";
+        String actual = IntegerToRoman.convert(number);
+        assertEquals(expected, actual);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void convertZeroShouldThrowException() {
+        IntegerToRoman.convert(0);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void convertOverThousandShouldThrowException() {
+        IntegerToRoman.convert(1001);
     }
 }
